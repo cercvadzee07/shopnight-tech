@@ -1,8 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-bg: #0a0f16;
+  --color-cyber-glass: rgba(16, 25, 35, 0.6);
+  --color-cyber-border: rgba(255, 255, 255, 0.1);
+  --color-cyber-neon: #00f0ff;
+  --color-cyber-purple: #8a2be2;
+}
 
 body {
-  background-color: #050505;
+  background-color: var(--color-cyber-bg);
   color: #ffffff;
+}
+
+/* RGB ლაინის ანიმაცია */
+@keyframes rgb-line {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-rgb-line {
+  background: linear-gradient(90deg, #00f0ff, #8a2be2, #ff003c, #00f0ff);
+  background-size: 300% 100%;
+  animation: rgb-line 4s linear infinite;
 }
